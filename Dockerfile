@@ -11,7 +11,7 @@ COPY requirements.txt /
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get -q -y install --no-install-recommends curl && \
-    curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash && \
+    curl -s https://install.speedtest.net/app/cli/install.deb.sh | bash && \
     apt-get update && apt-get -q -y install speedtest && \
     apt-get -q -y autoremove && \
     apt-get -q -y clean && \
