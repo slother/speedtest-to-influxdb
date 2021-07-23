@@ -13,6 +13,8 @@ DB_USER = os.environ.get('DB_USER', 'db_username')
 DB_PASSWORD = os.environ.get('DB_PASSWORD', 'db_password')
 DB_DATABASE = os.environ.get('DB_DATABASE', 'speedtest_db')
 DB_RETRY_INVERVAL = int(os.environ.get('DB_RETRY_INVERVAL', 60)) # Time before retrying a failed data upload.
+DB_SSL = os.environ.get('DB_SSL', 'true')
+DB_VERIFY_SSL = os.environ.get('DB_VERIFY_SSL', 'true')
 
 # Speedtest Settings
 TEST_INTERVAL = int(os.environ.get('TEST_INTERVAL', 1800))  # Time between tests (in seconds).
@@ -21,7 +23,7 @@ TEST_FAIL_INTERVAL = int(os.environ.get('TEST_FAIL_INTERVAL', 60))  # Time befor
 PRINT_DATA = os.environ.get('PRINT_DATA', "False") # Do you want to see the results in your logs? Type must be str. Will be converted to bool.
 
 influxdb_client = InfluxDBClient(
-    DB_ADDRESS, DB_PORT, DB_USER, DB_PASSWORD, None)
+    DB_ADDRESS, DB_PORT, DB_USER, DB_PASSWORD, None, DB_SSL, DB_VERIFY_SSL)
 
 def str2bool(v):
   return v.lower() in ("yes", "true", "t", "1")
