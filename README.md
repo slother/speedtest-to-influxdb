@@ -1,4 +1,4 @@
-# Speedtest to InfluxDB
+# Speedtest to InfluxDB 2.0
 
 This is a small Python script that will continuously run the Speedtest CLI application by Ookla, reformat the data output and forward it on to an InfluxDB database.
 
@@ -18,9 +18,9 @@ Be aware that this script will automatically accept the license and GDPR stateme
 
     NOTE: The `speedtest-cli` package in distro repositories is an unofficial client. It will need to be uninstalled before installing the Ookla Speedtest CLI application with the directions on their website.
 
-2. Install the InfluxDB client for library from Python.
+2. Install the InfluxDB2 client for library from Python.
 
-    `pip3 install influxdb`
+    `pip3 install influxdb-client`
 
 3. Run the script.
 
